@@ -12,8 +12,9 @@ class ExpenseController extends AbstractController
      */
     public function index()
     {
-        return $this->render('expense/index.html.twig', [
-            'controller_name' => 'ExpenseController',
-        ]);
+        $expenses= ['expense one', 'expense two'];
+
+        return $this->render('expense/index.html.twig', array
+            ('expenses' => $expenses));
     }
 }

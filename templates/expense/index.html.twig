@@ -3,12 +3,32 @@
 {% block title %}Sexpense{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello Richard! ✅</h1>
-</div>
+{% if expenses %}
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>
+            Expense Name
+        </th>
+        <th>
+            Action
+        </th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+    {% for expense in expenses %}
+    <tr>
+        <td>
+            {{ expense }}
+        </td>
+        <td>
+            <a href="/expense/1" class="btn btn-primary">Show</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+    {% else %}
+    <p>No expenses yet</p>
+    {% endif %}
 {% endblock %}
